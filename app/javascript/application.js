@@ -4,8 +4,8 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "bootstrap"
 import * as jquery from "jquery"
-$(document).ready(function() {
-    $('.close').click(function() {
+document.addEventListener('turbo:load', function() {
+    $(document).on('click', '.close', function() {
         $(this).closest('.alert').fadeOut();
     });
 });
