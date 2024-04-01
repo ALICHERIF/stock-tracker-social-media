@@ -17,3 +17,13 @@
   </div>
 
 <% end %>
+<% if @stock %>
+<div class="card card-header">
+  <div class="results-block">
+    <strong>Symbol:</strong><%= @stock.ticker %>
+    <strong>name:</strong><%= @stock.name %>
+    <strong>price:</strong><%= @stock.last_price %>
+  </div>
+
+</div>
+<% end %>
