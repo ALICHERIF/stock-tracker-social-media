@@ -1,7 +1,7 @@
 <h1>My portfolio</h1>
 <div class="search-area">
   <p>search stock</p>
-  <%= form_tag(search_stock_path, method: 'get') do %>
+  <%= form_tag search_stock_path, remote: true, method: :get do %>
   <!-- form fields go here -->
   <div class="form-group row">
     <div class="col-sm-9 no-right-padding">
@@ -17,13 +17,6 @@
   </div>
 
 <% end %>
-<% if @stock %>
-<div class="card card-header">
-  <div class="results-block">
-    <strong>Symbol:</strong><%= @stock.ticker %>
-    <strong>name:</strong><%= @stock.name %>
-    <strong>price:</strong><%= @stock.last_price %>
-  </div>
 
+<%= render 'users/result' %>
 </div>
-<% end %>
