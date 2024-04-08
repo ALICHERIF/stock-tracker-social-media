@@ -1,7 +1,7 @@
 <h1>My portfolio</h1>
 <div class="search-area">
   <p>search stock</p>
-  <%= form_tag search_stock_path, remote: true, method: :get do %>
+  <%= form_with url: search_stock_path, method: :get, data: { turbo_frame: "results" } do %>
   <!-- form fields go here -->
   <div class="form-group row">
     <div class="col-sm-9 no-right-padding">
@@ -17,6 +17,9 @@
   </div>
 
 <% end %>
-
-<%= render 'users/result' %>
 </div>
+  <%= turbo_frame_tag "results" do %>
+  <div id="results">
+
+  </div>
+  <% end %>
